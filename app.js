@@ -37,10 +37,13 @@ const { Server } = require("socket.io");
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, { /* options */
-  cors:{
-    origin: "*"
-  }
-});
+  // cors:{
+  //   origin: "*"
+  // },{
+    allowEIO3: true // false by default
+  // }
+  });
+// });
 
 app.use(express.static(__dirname));
 
